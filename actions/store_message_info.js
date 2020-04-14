@@ -24,30 +24,9 @@ section: "Messaging",
 
 subtitle: function(data) {
 	const message = ['Command Message', 'Temp Variable', 'Server Variable', 'Global Variable'];
-	const info = ['Message Object', 'Message ID', 'Message Text', 'Message Author', 'Message Channel', 'Message Timestamp', 'Message Is Pinned?', 'Message Is TTS?', 'Message edited at', 'Message edits history', 'Message is pinnable?', 'Message includes @everyone mention?', 'Messages different reactions count', 'Mentioned users list', 'Mentioned users count', 'Message URL'];
+	const info = ['Message Object', 'Message ID', 'Message Text', 'Message Author', 'Message Channel', 'Message Timestamp', 'Message Is Pinned?', 'Message Is TTS?'];
 	return `${message[parseInt(data.message)]} - ${info[parseInt(data.info)]}`;
 },
-
-//---------------------------------------------------------------------
-	 // DBM Mods Manager Variables (Optional but nice to have!)
-	 //
-	 // These are variables that DBM Mods Manager uses to show information
-	 // about the mods for people to see in the list.
-	 //---------------------------------------------------------------------
-
-	 // Who made the mod (If not set, defaults to "DBM Mods")
-	 author: "DBM Mods, Lasse & NetLuis",
-
-	 // The version of the mod (Defaults to 1.0.0)
-	 version: "1.9.3",
-
-	 // A short description to show on the mod line for this mod (Must be on a single line)
-	 short_description: "Added more options to default action.",
-
-	 // If it depends on any other mods by name, ex: WrexMODS if the mod uses something from WrexMods
-
-
-	 //---------------------------------------------------------------------
 
 //---------------------------------------------------------------------
 // Action Storage Function
@@ -83,30 +62,6 @@ variableStorage: function(data, varType) {
 		case 7:
 			dataType = 'Boolean';
 			break;
-		case 8:
-			dataType = "Date";
-			break;
-		case 9:
-			dataType = "Array";
-			break;
-		case 10:
-			dataType = "Boolean";
-			break;
-		case 11:
-			dataType = "Boolean";
-			break;
-		case 12:
-			dataType = "Number";
-			break;
-		case 13:
-			dataType = "Array";
-			break;
-		case 14:
-			dataType = "Number";
-			break;
-		case 15: 
-			dataType = "URL";
-			break;
 	}
 	return ([data.varName2, dataType]);
 },
@@ -139,7 +94,6 @@ fields: ["message", "varName", "info", "storage", "varName2"],
 
 html: function(isEvent, data) {
 	return `
-	<div><p>This action has been modified by DBM Mods.</p></div><br>
 <div>
 	<div style="float: left; width: 35%;">
 		Source Message:<br>
@@ -164,14 +118,6 @@ html: function(isEvent, data) {
 			<option value="5">Message Timestamp</option>
 			<option value="6">Message Is Pinned?</option>
 			<option value="7">Message Is TTS?</option>
-			<option value="8">Message edited at</option>
-			<option value="9">Message edit history</option>
-			<option value="10">Message is pinnable?</option>
-			<option value="11">Message includes @everyone mention?</option>
-			<option value="12">Messages different reactions count</option>
-			<option value="13">Messages mentioned users list</option>
-			<option value="14">Messages mentioned users count</option>
-			<option value="15">Message URL</option>
 		</select>
 	</div>
 </div><br>
@@ -248,29 +194,6 @@ action: function(cache) {
 			break;
 		case 7:
 			result = msg.tts;
-		case 8:
-			result = msg.editedAt;
-			break;
-		case 9:
-			result = msg.edits;
-			break;
-		case 10:
-			result = msg.pinnable;
-			break;
-		case 11:
-			result = msg.mentions.everyone;
-			break;
-		case 12:
-			result = msg.reactions.array().length;
-			break;
-		case 13:
-			result = msg.mentions.users.array();
-			break;
-		case 14:
-			result = msg.mentions.users.array().length;
-			break;
-		case 15:
-			result = msg.url;
 			break;
 		default:
 			break;

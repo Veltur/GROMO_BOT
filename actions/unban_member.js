@@ -23,8 +23,8 @@ section: "Member Control",
 //---------------------------------------------------------------------
 
 subtitle: function(data) {
-	const members = ['Mentioned User', 'Command Author', 'Temp Variable', 'Server Variable', 'Global Variable'];
-	return `${members[parseInt(data.member)]}`;
+	const channels = ['Mentioned User', 'Command Author', 'Temp Variable', 'Server Variable', 'Global Variable'];
+	return `${channels[parseInt(data.member)]}`;
 },
 
 //---------------------------------------------------------------------
@@ -102,11 +102,7 @@ action: function(cache) {
 	const type = parseInt(data.member);
 	const varName = this.evalMessage(data.varName, cache);
 	const member = this.getMember(type, varName, cache);
-	if(Array.isArray(member)) {
-		this.callListFunc(member, 'unban', [server, this.evalMessage(data.reason, cache)]).then(function() {
-			this.callNextAction(cache);
-		}.bind(this));
-	} else if(member && member.author && server && server.unban) {
+	if(member && member.author && server && server.unban) {
 		server.unban(member.author, this.evalMessage(data.reason, cache)).then(function(member) {
 			this.callNextAction(cache);
 		}.bind(this)).catch(this.displayError.bind(this, data, cache));

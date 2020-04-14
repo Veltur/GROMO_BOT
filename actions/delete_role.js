@@ -98,11 +98,7 @@ action: function(cache) {
 	const storage = parseInt(data.storage);
 	const varName = this.evalMessage(data.varName, cache);
 	const role = this.getRole(storage, varName, cache);
-	if(Array.isArray(role)) {
-		this.callListFunc(role, 'delete', []).then(function() {
-			this.callNextAction(cache);
-		}.bind(this));
-	} else if(role && role.delete) {
+	if(role && role.delete) {
 		role.delete().then(function(role) {
 			this.callNextAction(cache);
 		}.bind(this)).catch(this.displayError.bind(this, data, cache));

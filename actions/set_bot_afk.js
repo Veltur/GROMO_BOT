@@ -54,7 +54,7 @@ fields: ["afk"],
 
 html: function(isEvent, data) {
 	return `
-<div style="float: left; width: 80%;">
+<div style="float: left; width: 70%;">
 	AFK Status:<br>
 	<select id="status" class="round">
 		<option value="0">AFK</option>

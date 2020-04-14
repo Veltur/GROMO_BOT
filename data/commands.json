@@ -1,1 +1,595 @@
-[null,{"name":"wycisz","permissions":"MUTE_MEMBERS","restriction":"1","actions":[{"member":"0","varName":"","mute":"0","name":"Set Member Mute"},{"channel":"0","varName":"","message":"🔇 Administrator ${member} wyciszył użytkownika ${mentionedUser} ! 🔇","storage":"0","varName2":"","name":"Send Message"}]},{"name":"blokada","permissions":"BAN_MEMBERS","restriction":"1","actions":[{"member":"0","varName":"","reason":"Zostałeś zablokowany na serwerze. Jeżeli się z tym nie zgadasz skontaktuj się z administracją serwera.","name":"Ban Member"},{"channel":"0","varName":"","message":"❌ Administrator ${member} nałożył blokade konta na użytkownika ${mentionedUser} ! ❌","storage":"0","varName2":"","name":"Send Message"}]},{"name":"wyrzuc","permissions":"KICK_MEMBERS","restriction":"1","actions":[{"member":"0","varName":"","reason":"Zostałeś wyrzucony z serwera! Jeżeli się z tym nie zgadzasz zgłoś to administracji serwera,","name":"Kick Member"},{"channel":"0","varName":"","message":"🚫 Administrator ${member} wyrzucił z serwera użytkownika ${mentionedUser} ! 🚫","storage":"0","varName2":"","name":"Send Message"}]},{"name":"odcisz","permissions":"MUTE_MEMBERS","restriction":"1","actions":[{"member":"0","varName":"","mute":"1","name":"Set Member Mute"},{"channel":"0","varName":"","message":"🔉 Administrator ${member} odciszył użytkownika ${mentionedUser} ! 🔉","storage":"0","varName2":"","name":"Send Message"}]},{"name":"ostrzez","permissions":"MUTE_MEMBERS","restriction":"1","actions":[{"channel":"0","varName":"","message":"⚠️ Administrator ${member} ostrzega użytkownika ${mentionedUser} ! ⚠️","storage":"0","varName2":"","name":"Send Message"}]},{"name":"przerwa","permissions":"MUTE_MEMBERS","restriction":"1","actions":[{"channel":"0","varName":"","message":"❗ Uwaga ! Za chwilę na serwerze odbędzie się przerwa techniczna ❗","storage":"0","varName2":"","name":"Send Message"}]},{"name":"konfiguracja","permissions":"KICK_MEMBERS","restriction":"1","actions":[{"gameName":"Gromo.pl","gameLink":"https://gromo.pl/","name":"Set Bot Game"},{"channel":"0","varName":"","message":"❗ Konfiguracja rozpoczęta... ❗\n\n  game_mode activated\n  bot_role attributed\n  bot_commands activated\n  set_bot_status attributed\n  \n ✅ Konfiguracja pomyślnie zakończona ✅\n 🔻 Konfiguracje przeprowadzał administrator ${member} 🔻\n                ","storage":"0","varName2":"","name":"Send Message"},{"status":"0","name":"Set Bot Status"}]},{"name":"wyczysc","permissions":"KICK_MEMBERS","restriction":"1","actions":[{"channel":"0","count":"50","condition":"2","custom":"","varName":"","name":"Delete Bulk Messages"},{"channel":"0","varName":"","message":"🧨 Administrator ${member} wyczyścił chat!  ! 🧨","storage":"0","varName2":"","name":"Send Message"}]},{"name":"odblokuj","permissions":"KICK_MEMBERS","restriction":"1","actions":[{"member":"0","varName":"","reason":"","name":"Unban Member"},{"channel":"0","varName":"","message":"❌ Administrator ${member} odblokował konto użytkownika ${mentionedUser} ! ❌","storage":"0","varName2":"","name":"Send Message"}]},{"name":"zglos","permissions":"NONE","restriction":"1","actions":[{"condition":"1","comparison":"0","value":"1","iftrue":"3","iftrueVal":"4","iffalse":"0","iffalseVal":"","name":"Check Parameters"},{"title":"","author":"","color":"","timestamp":"false","url":"","authorIcon":"","imageUrl":"","thumbUrl":"","storage":"1","varName":"embediro_ERROR1","name":"Create Embed Message"},{"storage":"1","varName":"embediro_ERROR1","message":"Oznacz użytkownika którego chcesz zgłosić! W wypadku problemów na serwerze oznacz siebie.","name":"Set Embed Description"},{"storage":"1","varName":"embediro_ERROR1","channel":"0","varName2":"","name":"Send Embed Message"},{"name":"End Action Sequence"},{"condition":"0","comparison":"2","value":"0","iftrue":"3","iftrueVal":"4","iffalse":"0","iffalseVal":"","name":"Check Parameters"},{"title":"","author":"","color":"","timestamp":"false","url":"","authorIcon":"","imageUrl":"","thumbUrl":"","storage":"1","varName":"embediro_ERROR2","name":"Create Embed Message"},{"storage":"1","varName":"embediro_ERROR2","message":"Napisz powód zgłoszenia!","name":"Set Embed Description"},{"storage":"1","varName":"embediro_ERROR2","channel":"0","varName2":"","name":"Send Embed Message"},{"name":"End Action Sequence"},{"storage":"0","varName":"","name":"Delete Message"},{"info":"2","infoIndex":"1","storage":"1","varName":"user","name":"Store Command Params"},{"info":"1","infoIndex":"2","storage":"1","varName":"reason","name":"Store Command Params"},{"info":"1","find":"zgłoszenia","storage":"1","varName":"zgłoszenia","name":"Find Channel"},{"member":"0","varName":"","info":"1","storage":"1","varName2":"id","name":"Store Member Info"},{"member":"1","varName":"","info":"7","storage":"1","varName2":"user_dodaje","name":"Store Member Things"},{"member":"1","varName":"","info":"16","storage":"1","varName2":"AVATAR_ZGLASZAJACEGO","name":"Store Member Info"},{"member":"0","varName":"","info":"16","storage":"1","varName2":"AVATAR_TYPA","name":"Store Member Info"},{"title":"","author":"Dodano nowe zgłoszenie!","color":"#00FF00","timestamp":"true","url":"","authorIcon":"${tempVars(\"AVATAR_ZGLASZAJACEGO\")}","imageUrl":"","thumbUrl":"${tempVars(\"AVATAR_TYPA\")}","storage":"1","varName":"reported4","name":"Create Embed Message"},{"storage":"1","varName":"reported4","message":"• Zgłaszający: **${tempVars(\"user_dodaje\")}**\n• Zgłoszony użytkownik: **${tempVars(\"user\")}**\n• Powód zgłoszenia: **${tempVars(\"reason\")}**","name":"Set Embed Description"},{"storage":"1","varName":"reported4","message":"✅ = Wykonano! • ❌ = Sprawa do panelu zgłoszeń! • 👎 = Odrzucamy!","footerIcon":"","name":"Set Embed Footer"},{"storage":"1","varName":"reported4","channel":"5","varName2":"zgłoszenia","storage3":"0","varName3":"","name":"Send Embed Message"},{"channel":"0","varName":"","message":"**Dziękujemy!** Twoje zgłoszenie zostało wysłane do administracji.","storage":"1","varName2":"send","iffalse":"0","iffalseVal":"","name":"Send Message"},{"channel":"3","varName":"zgłoszenia","info":"4","storage":"1","varName2":"lastmsg","name":"Store Channel Info"},{"storage":"1","varName":"lastmsg","emoji":"4","varName2":"✅","varName3":"","name":"Add Reaction"},{"storage":"1","varName":"lastmsg","emoji":"4","varName2":"❌","varName3":"","name":"Add Reaction"},{"storage":"1","varName":"lastmsg","emoji":"4","varName2":"👎","varName3":"","name":"Add Reaction"},{"time":"5","measurement":"1","name":"Wait"},{"storage":"1","varName":"send","name":"Delete Message"}]},{"name":"info","permissions":"NONE","restriction":"1","actions":[{"channel":"0","varName":"","message":"✅ Został dodany system zgłoszeń, zgłoszenie możecie wysyłać na kanale \"zgłos-problem\" komendą /zglos @nazwa [powód] w przypadku gdy osoba pisząca zgłoszenie potrzebuje pomocy oznacza sama siebie a w powodzie piszę szczegółowe informacje. ✅","storage":"0","varName2":"","iffalse":"0","iffalseVal":"","name":"Send Message"}]}]
+[
+  null,
+  {
+    "name": "wycisz",
+    "permissions": "MUTE_MEMBERS",
+    "restriction": "1",
+    "actions": [
+      { "member": "0", "varName": "", "mute": "0", "name": "Set Member Mute" },
+      {
+        "channel": "0",
+        "varName": "",
+        "message": "🔇 Administrator ${member} wyciszył użytkownika ${mentionedUser} ! 🔇",
+        "storage": "0",
+        "varName2": "",
+        "name": "Send Message"
+      }
+    ]
+  },
+  {
+    "name": "blokada",
+    "permissions": "BAN_MEMBERS",
+    "restriction": "1",
+    "actions": [
+      {
+        "member": "0",
+        "varName": "",
+        "reason": "Zostałeś zablokowany na serwerze. Jeżeli się z tym nie zgadasz skontaktuj się z administracją serwera.",
+        "name": "Ban Member"
+      },
+      {
+        "channel": "0",
+        "varName": "",
+        "message": "❌ Administrator ${member} nałożył blokade konta na użytkownika ${mentionedUser} ! ❌",
+        "storage": "0",
+        "varName2": "",
+        "name": "Send Message"
+      }
+    ]
+  },
+  {
+    "name": "wyrzuc",
+    "permissions": "KICK_MEMBERS",
+    "restriction": "1",
+    "actions": [
+      {
+        "member": "0",
+        "varName": "",
+        "reason": "Zostałeś wyrzucony z serwera! Jeżeli się z tym nie zgadzasz zgłoś to administracji serwera,",
+        "name": "Kick Member"
+      },
+      {
+        "channel": "0",
+        "varName": "",
+        "message": "🚫 Administrator ${member} wyrzucił z serwera użytkownika ${mentionedUser} ! 🚫",
+        "storage": "0",
+        "varName2": "",
+        "name": "Send Message"
+      }
+    ]
+  },
+  {
+    "name": "odcisz",
+    "permissions": "MUTE_MEMBERS",
+    "restriction": "1",
+    "actions": [
+      { "member": "0", "varName": "", "mute": "1", "name": "Set Member Mute" },
+      {
+        "channel": "0",
+        "varName": "",
+        "message": "🔉 Administrator ${member} odciszył użytkownika ${mentionedUser} ! 🔉",
+        "storage": "0",
+        "varName2": "",
+        "name": "Send Message"
+      }
+    ]
+  },
+  {
+    "name": "ostrzez",
+    "permissions": "MUTE_MEMBERS",
+    "restriction": "1",
+    "actions": [
+      {
+        "channel": "0",
+        "varName": "",
+        "message": "⚠️ Administrator ${member} ostrzega użytkownika ${mentionedUser} ! ⚠️",
+        "storage": "0",
+        "varName2": "",
+        "name": "Send Message"
+      }
+    ]
+  },
+  {
+    "name": "przerwa",
+    "permissions": "MUTE_MEMBERS",
+    "restriction": "1",
+    "actions": [
+      {
+        "channel": "0",
+        "varName": "",
+        "message": "❗ Uwaga ! Za chwilę na serwerze odbędzie się przerwa techniczna ❗",
+        "storage": "0",
+        "varName2": "",
+        "name": "Send Message"
+      }
+    ]
+  },
+  {
+    "name": "konfiguracja",
+    "permissions": "KICK_MEMBERS",
+    "restriction": "1",
+    "actions": [
+      {
+        "gameName": "Gromo.pl",
+        "gameLink": "https://gromo.pl/",
+        "name": "Set Bot Game"
+      },
+      {
+        "channel": "0",
+        "varName": "",
+        "message": "❗ Konfiguracja rozpoczęta... ❗\n\n  game_mode activated\n  bot_role attributed\n  bot_commands activated\n  set_bot_status attributed\n  \n ✅ Konfiguracja pomyślnie zakończona ✅\n 🔻 Konfiguracje przeprowadzał administrator ${member} 🔻\n                ",
+        "storage": "0",
+        "varName2": "",
+        "name": "Send Message"
+      },
+      { "status": "0", "name": "Set Bot Status" }
+    ]
+  },
+  {
+    "name": "wyczysc",
+    "permissions": "KICK_MEMBERS",
+    "restriction": "1",
+    "actions": [
+      {
+        "channel": "0",
+        "count": "50",
+        "condition": "2",
+        "custom": "",
+        "varName": "",
+        "name": "Delete Bulk Messages"
+      },
+      {
+        "channel": "0",
+        "varName": "",
+        "message": "🧨 Administrator ${member} wyczyścił chat!  ! 🧨",
+        "storage": "0",
+        "varName2": "",
+        "name": "Send Message"
+      }
+    ]
+  },
+  {
+    "name": "odblokuj",
+    "permissions": "KICK_MEMBERS",
+    "restriction": "1",
+    "actions": [
+      { "member": "0", "varName": "", "reason": "", "name": "Unban Member" },
+      {
+        "channel": "0",
+        "varName": "",
+        "message": "❌ Administrator ${member} odblokował konto użytkownika ${mentionedUser} ! ❌",
+        "storage": "0",
+        "varName2": "",
+        "name": "Send Message"
+      }
+    ]
+  },
+  {
+    "name": "zglos",
+    "permissions": "NONE",
+    "restriction": "1",
+    "actions": [
+      {
+        "condition": "1",
+        "comparison": "0",
+        "value": "1",
+        "iftrue": "3",
+        "iftrueVal": "4",
+        "iffalse": "0",
+        "iffalseVal": "",
+        "name": "Check Parameters"
+      },
+      {
+        "title": "",
+        "author": "",
+        "color": "",
+        "timestamp": "false",
+        "url": "",
+        "authorIcon": "",
+        "imageUrl": "",
+        "thumbUrl": "",
+        "storage": "1",
+        "varName": "embediro_ERROR1",
+        "name": "Create Embed Message"
+      },
+      {
+        "storage": "1",
+        "varName": "embediro_ERROR1",
+        "message": "Oznacz użytkownika którego chcesz zgłosić! W wypadku problemów na serwerze oznacz siebie.",
+        "name": "Set Embed Description"
+      },
+      {
+        "storage": "1",
+        "varName": "embediro_ERROR1",
+        "channel": "0",
+        "varName2": "",
+        "name": "Send Embed Message"
+      },
+      { "name": "End Action Sequence" },
+      {
+        "condition": "0",
+        "comparison": "2",
+        "value": "0",
+        "iftrue": "3",
+        "iftrueVal": "4",
+        "iffalse": "0",
+        "iffalseVal": "",
+        "name": "Check Parameters"
+      },
+      {
+        "title": "",
+        "author": "",
+        "color": "",
+        "timestamp": "false",
+        "url": "",
+        "authorIcon": "",
+        "imageUrl": "",
+        "thumbUrl": "",
+        "storage": "1",
+        "varName": "embediro_ERROR2",
+        "name": "Create Embed Message"
+      },
+      {
+        "storage": "1",
+        "varName": "embediro_ERROR2",
+        "message": "Napisz powód zgłoszenia!",
+        "name": "Set Embed Description"
+      },
+      {
+        "storage": "1",
+        "varName": "embediro_ERROR2",
+        "channel": "0",
+        "varName2": "",
+        "name": "Send Embed Message"
+      },
+      { "name": "End Action Sequence" },
+      { "storage": "0", "varName": "", "name": "Delete Message" },
+      {
+        "info": "2",
+        "infoIndex": "1",
+        "storage": "1",
+        "varName": "user",
+        "name": "Store Command Params"
+      },
+      {
+        "info": "1",
+        "infoIndex": "2",
+        "storage": "1",
+        "varName": "reason",
+        "name": "Store Command Params"
+      },
+      {
+        "info": "1",
+        "find": "zgłoszenia",
+        "storage": "1",
+        "varName": "zgłoszenia",
+        "name": "Find Channel"
+      },
+      {
+        "member": "0",
+        "varName": "",
+        "info": "1",
+        "storage": "1",
+        "varName2": "id",
+        "name": "Store Member Info"
+      },
+      {
+        "member": "1",
+        "varName": "",
+        "info": "7",
+        "storage": "1",
+        "varName2": "user_dodaje",
+        "name": "Store Member Things"
+      },
+      {
+        "member": "1",
+        "varName": "",
+        "info": "16",
+        "storage": "1",
+        "varName2": "AVATAR_ZGLASZAJACEGO",
+        "name": "Store Member Info"
+      },
+      {
+        "member": "0",
+        "varName": "",
+        "info": "16",
+        "storage": "1",
+        "varName2": "AVATAR_TYPA",
+        "name": "Store Member Info"
+      },
+      {
+        "title": "",
+        "author": "Dodano nowe zgłoszenie!",
+        "color": "#00FF00",
+        "timestamp": "true",
+        "url": "",
+        "authorIcon": "${tempVars(\"AVATAR_ZGLASZAJACEGO\")}",
+        "imageUrl": "",
+        "thumbUrl": "${tempVars(\"AVATAR_TYPA\")}",
+        "storage": "1",
+        "varName": "reported4",
+        "name": "Create Embed Message"
+      },
+      {
+        "storage": "1",
+        "varName": "reported4",
+        "message": "• Zgłaszający: **${tempVars(\"user_dodaje\")}**\n• Zgłoszony użytkownik: **${tempVars(\"user\")}**\n• Powód zgłoszenia: **${tempVars(\"reason\")}**",
+        "name": "Set Embed Description"
+      },
+      {
+        "storage": "1",
+        "varName": "reported4",
+        "message": "✅ = Wykonano! • ❌ = Sprawa do panelu zgłoszeń! • 👎 = Odrzucamy!",
+        "footerIcon": "",
+        "name": "Set Embed Footer"
+      },
+      {
+        "storage": "1",
+        "varName": "reported4",
+        "channel": "5",
+        "varName2": "zgłoszenia",
+        "storage3": "0",
+        "varName3": "",
+        "name": "Send Embed Message"
+      },
+      {
+        "channel": "0",
+        "varName": "",
+        "message": "**Dziękujemy!** Twoje zgłoszenie zostało wysłane do administracji.",
+        "storage": "1",
+        "varName2": "send",
+        "iffalse": "0",
+        "iffalseVal": "",
+        "name": "Send Message"
+      },
+      {
+        "channel": "3",
+        "varName": "zgłoszenia",
+        "info": "4",
+        "storage": "1",
+        "varName2": "lastmsg",
+        "name": "Store Channel Info"
+      },
+      {
+        "storage": "1",
+        "varName": "lastmsg",
+        "emoji": "4",
+        "varName2": "✅",
+        "varName3": "",
+        "name": "Add Reaction"
+      },
+      {
+        "storage": "1",
+        "varName": "lastmsg",
+        "emoji": "4",
+        "varName2": "❌",
+        "varName3": "",
+        "name": "Add Reaction"
+      },
+      {
+        "storage": "1",
+        "varName": "lastmsg",
+        "emoji": "4",
+        "varName2": "👎",
+        "varName3": "",
+        "name": "Add Reaction"
+      },
+      { "time": "5", "measurement": "1", "name": "Wait" },
+      { "storage": "1", "varName": "send", "name": "Delete Message" }
+    ]
+  },
+  {
+    "name": "info",
+    "permissions": "NONE",
+    "restriction": "1",
+    "actions": [
+      {
+        "channel": "0",
+        "varName": "",
+        "message": "✅ Został dodany system zgłoszeń, zgłoszenie możecie wysyłać na kanale \"zgłos-problem\" komendą /zglos @nazwa [powód] w przypadku gdy osoba pisząca zgłoszenie potrzebuje pomocy oznacza sama siebie a w powodzie piszę szczegółowe informacje. ✅",
+        "storage": "0",
+        "varName2": "",
+        "iffalse": "0",
+        "iffalseVal": "",
+        "name": "Send Message"
+      }
+    ]
+  },
+  {
+    "name": "zgłoś",
+    "permissions": "NONE",
+    "restriction": "1",
+    "actions": [
+      {
+        "channel": "0",
+        "varName": "",
+        "message": "❌ Błędna komenda ! użyj: /zglos @nick [powod] ❌",
+        "storage": "0",
+        "varName2": "",
+        "iffalse": "0",
+        "iffalseVal": "",
+        "name": "Send Message"
+      }
+    ]
+  },
+  {
+    "name": "propozycja",
+    "permissions": "NONE",
+    "restriction": "1",
+    "actions": [
+      {
+        "info": "1",
+        "find": "propozycje",
+        "storage": "1",
+        "varName": "kanal",
+        "name": "Find Channel"
+      },
+      {
+        "member": "1",
+        "varName": "",
+        "info": "7",
+        "storage": "1",
+        "varName2": "user_tag",
+        "name": "Store Member Things"
+      },
+      {
+        "member": "1",
+        "varName": "",
+        "info": "16",
+        "storage": "1",
+        "varName2": "avatar_URL",
+        "name": "Store Member Info"
+      },
+      {
+        "info": "1",
+        "infoIndex": "1",
+        "storage": "1",
+        "varName": "propozycja_tresc",
+        "name": "Store Command Params"
+      },
+      {
+        "condition": "0",
+        "comparison": "1",
+        "value": "1",
+        "iftrue": "0",
+        "iftrueVal": "",
+        "iffalse": "3",
+        "iffalseVal": "4",
+        "name": "Check Parameters"
+      },
+      {
+        "title": "",
+        "author": "",
+        "color": "",
+        "timestamp": "false",
+        "url": "",
+        "authorIcon": "",
+        "imageUrl": "",
+        "thumbUrl": "",
+        "storage": "1",
+        "varName": "embed_blad",
+        "name": "Create Embed Message"
+      },
+      {
+        "storage": "1",
+        "varName": "embed_blad",
+        "message": "**Błąd:** Napisz swoją propozycje.",
+        "name": "Set Embed Description"
+      },
+      {
+        "storage": "1",
+        "varName": "embed_blad",
+        "channel": "0",
+        "varName2": "",
+        "storage3": "0",
+        "varName3": "",
+        "name": "Send Embed Message"
+      },
+      { "name": "End Action Sequence" },
+      {
+        "title": "",
+        "author": "${tempVars(\"user_tag\")}",
+        "color": "#69ff84",
+        "timestamp": "false",
+        "url": "",
+        "authorIcon": "${tempVars(\"avatar_URL\")}",
+        "imageUrl": "",
+        "thumbUrl": "",
+        "storage": "1",
+        "varName": "propozycja_embed",
+        "name": "Create Embed Message"
+      },
+      {
+        "storage": "1",
+        "varName": "propozycja_embed",
+        "message": "${tempVars(\"propozycja_tresc\")}",
+        "name": "Set Embed Description"
+      },
+      {
+        "storage": "1",
+        "varName": "propozycja_embed",
+        "message": "✅ Zaakceptowane! • ❌ Odrzucone!",
+        "footerIcon": "",
+        "name": "Set Embed Footer"
+      },
+      {
+        "storage": "1",
+        "varName": "propozycja_embed",
+        "channel": "5",
+        "varName2": "kanal",
+        "storage3": "1",
+        "varName3": "wiadomosc_sended",
+        "name": "Send Embed Message"
+      },
+      {
+        "storage": "1",
+        "varName": "wiadomosc_sended",
+        "emoji": "4",
+        "varName2": "✅",
+        "varName3": "",
+        "name": "Add Reaction"
+      },
+      {
+        "storage": "1",
+        "varName": "wiadomosc_sended",
+        "emoji": "4",
+        "varName2": "❌",
+        "varName3": "",
+        "name": "Add Reaction"
+      },
+      { "time": "2", "measurement": "1", "name": "Wait" },
+      { "storage": "0", "varName": "", "name": "Delete Message" }
+    ]
+  },
+  {
+    "name": "info2",
+    "permissions": "NONE",
+    "restriction": "1",
+    "actions": [
+      {
+        "channel": "0",
+        "varName": "",
+        "message": "✅ Dodany został system propozycji, wszystkie informacje są podane na kanale \"napisz-propozycje\" ✅",
+        "storage": "0",
+        "varName2": "",
+        "iffalse": "0",
+        "iffalseVal": "",
+        "name": "Send Message"
+      }
+    ]
+  },
+  {
+    "name": "testy",
+    "permissions": "NONE",
+    "restriction": "1",
+    "actions": [
+      {
+        "channel": "0",
+        "varName": "",
+        "message": " ⚙️  Testy zakończone ⚙️\n✅ Bot działa poprawnie ✅",
+        "storage": "0",
+        "varName2": "",
+        "iffalse": "0",
+        "iffalseVal": "",
+        "name": "Send Message"
+      }
+    ]
+  },
+  {
+    "name": "shizu",
+    "permissions": "NONE",
+    "restriction": "1",
+    "actions": [
+      {
+        "channel": "0",
+        "varName": "",
+        "message": " 💢  Testy zakończone 💢\n💖 Shizukana działa poprawnie 💖",
+        "storage": "0",
+        "varName2": "",
+        "iffalse": "0",
+        "iffalseVal": "",
+        "name": "Send Message"
+      }
+    ]
+  }
+]

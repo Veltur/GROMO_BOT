@@ -102,11 +102,7 @@ action: function(cache) {
 	const storage = parseInt(data.storage);
 	const varName = this.evalMessage(data.varName, cache);
 	const message = this.getMessage(storage, varName, cache);
-	if(Array.isArray(message)) {
-		this.callListFunc(message, 'delete', []).then(function() {
-			this.callNextAction(cache);
-		}.bind(this));
-	} else if(message && message.delete) {
+	if(message && message.delete) {
 		message.delete().then(function() {
 			this.callNextAction(cache);
 		}.bind(this)).catch(this.displayError.bind(this, data, cache));

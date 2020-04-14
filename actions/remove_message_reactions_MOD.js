@@ -14,7 +14,7 @@ name: "Clear reactions from message",
 // This is the section the action will fall into.
 //---------------------------------------------------------------------
 
-section: "Reaction Control",
+section: "Messaging",
 
 //---------------------------------------------------------------------
 // Action Subtitle

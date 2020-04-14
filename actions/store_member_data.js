@@ -14,7 +14,7 @@ name: "Store Member Data",
 // This is the section the action will fall into.
 //---------------------------------------------------------------------
 
-section: "Deprecated",
+section: "Member Control",
 
 //---------------------------------------------------------------------
 // Action Subtitle

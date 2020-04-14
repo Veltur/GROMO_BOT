@@ -14,7 +14,7 @@ name: "Check Server Data",
 // This is the section the action will fall into.
 //---------------------------------------------------------------------
 
-section: "Deprecated",
+section: "Conditions",
 
 //---------------------------------------------------------------------
 // Action Subtitle

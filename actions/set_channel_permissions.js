@@ -23,9 +23,9 @@ section: "Channel Control",
 //---------------------------------------------------------------------
 
 subtitle: function(data) {
-	const names = ['Same Channel', 'Mentioned Channel', 'Default Channel', 'Temp Variable', 'Server Variable', 'Global Variable'];
+	const names = ['Same Channel', 'Mentioned Channel', '1st Server Channel', 'Temp Variable', 'Server Variable', 'Global Variable'];
 	const index = parseInt(data.storage);
-	return index < 3 ? `${names[index]}` : `${names[index]} - ${data.varName}`;
+	return parseInt(data.storage) < 3 ? `${names[index]}` : `${names[index]} - ${data.varName}`;
 },
 
 //---------------------------------------------------------------------
@@ -119,11 +119,7 @@ action: function(cache) {
 	const channel = this.getChannel(storage, varName, cache);
 	const options = {};
 	options[data.permission] = Boolean(data.state === "0");
-	if(Array.isArray(channel)) {
-		this.callListFunc(channel, 'overwritePermissions', [server.id, options]).then(function() {
-			this.callNextAction(cache);
-		}.bind(this));
-	} else if(channel && channel.overwritePermissions) {
+	if(channel && channel.overwritePermissions) {
 		channel.overwritePermissions(server.id, options).then(function() {
 			this.callNextAction(cache);
 		}.bind(this)).catch(this.displayError.bind(this, data, cache));

@@ -23,7 +23,7 @@ section: "Other Stuff",
 //---------------------------------------------------------------------
 
 subtitle: function(data) {
-	return `Call Command/Event ID "${data.source}"`;
+	return `${data.source.substring(0, 3) === 'com' ? 'Command' : 'Event'} ${data.source.substring(4)}`;
 },
 
 //---------------------------------------------------------------------
@@ -81,19 +81,17 @@ init: function() {
 
 	const $cmds = glob.$cmds;
 	const coms = document.getElementById('commands');
-	coms.innerHTML = '';
 	for(let i = 0; i < $cmds.length; i++) {
 		if($cmds[i]) {
-			coms.innerHTML += `<option value="${$cmds[i]._id}">${$cmds[i].name}</option>\n`;
+			coms.innerHTML += `<option value="com-${i}">${$cmds[i].name}</option>\n`;
 		}
 	}
 
 	const $evts = glob.$evts;
 	const evet = document.getElementById('events');
-	evet.innerHTML = '';
 	for(let i = 0; i < $evts.length; i++) {
 		if($evts[i]) {
-			evet.innerHTML += `<option value="${$evts[i]._id}">${$evts[i].name}</option>\n`;
+			evet.innerHTML += `<option value="evt-${i}">${$evts[i].name}</option>\n`;
 		}
 	}
 },
@@ -110,16 +108,13 @@ action: function(cache) {
 	const data = cache.actions[cache.index];
 	const Files = this.getDBM().Files;
 	
-	const id = data.source;
+	const id = parseInt(data.source.substring(4));
 	let actions;
-	const allData = Files.data.commands.concat(Files.data.events);
-	for(let i = 0; i < allData.length; i++) {
-		if(allData[i] && allData[i]._id === id) {
-			actions = allData[i].actions;
-			break;
-		}
-	}
-	if(!actions) {
+	if(data.source.substring(0, 3) === 'com' && !!Files.data.commands[id]) {
+		actions = Files.data.commands[id].actions;
+	} else if(data.source.substring(0, 3) === 'evt' && !!Files.data.events[id]) {
+		actions = Files.data.events[id].actions;
+	} else {
 		this.callNextAction(cache);
 		return;
 	}

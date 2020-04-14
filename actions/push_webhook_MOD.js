@@ -44,7 +44,7 @@ module.exports = {
 
 	 // If it depends on any other mods by name, ex: WrexMODS if the mod uses something from WrexMods
 	 depends_on_mods: [
-		{name:'WrexMods',path:'aaa_wrexmods_dependencies_MOD.js'}
+ 		{name:'custommods',path:'abb_custom_methods_MOD.js'}
  	],
 
 

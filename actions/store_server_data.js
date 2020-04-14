@@ -14,7 +14,7 @@ name: "Store Server Data",
 // This is the section the action will fall into.
 //---------------------------------------------------------------------
 
-section: "Deprecated",
+section: "Server Control",
 
 //---------------------------------------------------------------------
 // Action Subtitle
