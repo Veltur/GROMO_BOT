@@ -37,7 +37,7 @@ subtitle: function(data) {
 	 author: "DBM Mods",
 
 	 // The version of the mod (Defaults to 1.0.0)
-	 version: "1.9.3",
+	 version: "1.9",
 
 	 // A short description to show on the mod line for this mod (Must be on a single line)
 	 short_description: "Changelog overview",
@@ -85,70 +85,6 @@ html: function(isEvent, data) {
 	return `
 <div>
 <div id ="wrexdiv" style="width: 550px; height: 350px; overflow-y: scroll;">
-	<p>
-	<h2>1.9.3: Yet another update</h2>
-		● Added RSS actions<br>
-		● Added Speedtest action<br>
-		● Added Message URL to Store Message Info<br>
-		● Added Send Embed to Webhook<br>
-		● Added Restart Bot<br>
-		● Added Create Webhook<br>
-		● Removed Set AFK Timeout<br>
-		● Fixed Set Category using ID<br>
-		● Fixed _id of Loop Through List<br>
-		● Updated Convert Variable<br>
-		● Updated Set Role Permissions<br>
-		● Updated Control Variable<br>
-		● Moved smaller, not always needed mods, to a separated folder<br>
-	</p>
-	<p>
-	<h2>1.9.2: Update Update</h2>
-		● Updated "Send Stats to DBL" - Removed automated success message from the console<br>
-		● Updated "Convert List To Text" - Added sort option<br>
-		● Updated "Store Audio Info" - Added current song URL<br>
-		● Updated "Custom Image Effect"<br>
-		● Fixed "Find Custom Emoji in Server"<br>
-		● Fixed "Find Category"<br>
-		● Fixed "Add Reaction"<br>
-		● Fixed "Set Role Permissions"<br>
-		● Fixed "Create Channel" - Set Category ID<br>
-		● Merged "Store Role Info Things" with "Store Role Info"<br>
-		● Merged "Store Member Things" with "Store Member Info"<br>
-		● Added "Set AFK Channel"<br>
-		● Added "Math Operation Plus"<br>
-		● Added Donators to the "Welcome" action<br>
-	</p>
-	<p>
-	<h2>1.9.1: Bunch of new mods, and yes, we now have the reaction stuff</h2>
-		● Added Set Role Voice Channel Perms<br>
-		● Added Set Member Voice Channel Perms<br>
-		● Added Find Category<br>
-		● Added Change Prefix<br>
-		● Added Set Role Permissions<br>
-		● Added Get Song Lyrics<br>
-		● Added Get Bot Stats From DBXYZ<br>
-		● Added Check If User Reacted<br>
-		● Added Remove Reaction<br>
-		● Added Find Reaction<br>
-		● Added Store Game Server Info<br>
-		● Added Find Custom Emoji In Server<br>
-		● Merged Send Image MOD with Send Image<br>
-		● Merged Store Server Things with Store Server Info<br>
-		● Merged Store Message Things with Store Message Info<br>
-		● Merged Store Voice Channel Things with Store Voice Channel Info<br>
-		● Merged Store Voice Channel Things with Store Voice Channel Info<br>
-		● Merged Store Channel Things with Store Channel Info<br>
-		● Updated Create Text Channel<br>
-		● Updated DBL actions<br>
-		● Updated Create Voice Channel<br>
-		● Updated Store Reaction Info<br>
-		● Updated Remove Message Reactions<br>
-		● Updated Add Reaction<br>
-		● Fixed Find Member<br>
-		● Fixed Send To Webhook<br>
-		● Fixed Send Embed Message<br>
-		● Fixed Set Bot Activity
-	</p>
 	<p>
 		<h2>1.9: New Mods, Bug fixes and general quality of life improvements!</h2>
 		● Added Store Invite Info<br>

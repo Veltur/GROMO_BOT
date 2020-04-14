@@ -101,11 +101,7 @@ action: function(cache) {
 	const type = parseInt(data.member);
 	const varName = this.evalMessage(data.varName, cache);
 	const member = this.getMember(type, varName, cache);
-	if(Array.isArray(member)) {
-		this.callListFunc(member, 'setNickname', [this.evalMessage(data.nickname, cache)]).then(function() {
-			this.callNextAction(cache);
-		}.bind(this));
-	} else if(member && member.setNickname) {
+	if(member && member.setNickname) {
 		member.setNickname(this.evalMessage(data.nickname, cache)).then(function(member) {
 			this.callNextAction(cache);
 		}.bind(this)).catch(this.displayError.bind(this, data, cache));

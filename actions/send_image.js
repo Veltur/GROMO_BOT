@@ -120,21 +120,7 @@ action: function(cache) {
 	const channel = parseInt(data.channel);
 	const varName2 = this.evalMessage(data.varName2, cache);
 	const target = this.getSendTarget(channel, varName2, cache);
-	if(Array.isArray(target)) {
-		const Images = this.getDBM().Images;
-		Images.createBuffer(image).then(function(buffer) {
-			this.callListFunc(target, 'send', [this.evalMessage(data.message, cache), {
-				files: [
-					{
-						attachment: buffer,
-						name: 'image.png'
-					}
-				]
-			}]).then(function() {
-				this.callNextAction(cache);
-			}.bind(this));
-		}.bind(this)).catch(this.displayError.bind(this, data, cache));
-	} else if(target && target.send) {
+	if(target && target.send) {
 		const Images = this.getDBM().Images;
 		Images.createBuffer(image).then(function(buffer) {
 			target.send(this.evalMessage(data.message, cache), {

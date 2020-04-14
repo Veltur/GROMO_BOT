@@ -168,13 +168,13 @@ action: function(cache) {
 					author = null;
 				}
 				if(author) {
-					messages = messages.filter(function(element) {
+					messages.filter(function(element) {
 						return element.author === author || element.member === author;
 					}, this);
 				}
 			} else if(condition === 2) {
 				const cond = data.custom;
-				messages = messages.filter(function(message) {
+				messages.filter(function(message) {
 					let result = false;
 					try {
 						result = !!this.eval(cond, cache);

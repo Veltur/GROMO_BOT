@@ -107,15 +107,7 @@ action: function(cache) {
 	if(channel === undefined || message === undefined) return;
 	const varName = this.evalMessage(data.varName, cache);
 	const target = this.getSendTarget(channel, varName, cache);
-	if(Array.isArray(target)) {
-		this.callListFunc(target, 'send', [this.evalMessage(message, cache), {
-				files: [
-					this.getLocalFile(this.evalMessage(data.file, cache))
-				]
-			}]).then(function() {
-				this.callNextAction(cache);
-			}.bind(this));
-	} else if(target && target.send) {
+	if(target && target.send) {
 		try {
 			target.send(this.evalMessage(message, cache), {
 				files: [

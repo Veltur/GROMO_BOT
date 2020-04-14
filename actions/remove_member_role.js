@@ -113,13 +113,8 @@ action: function(cache) {
 	const storage2 = parseInt(data.member);
 	const varName2 = this.evalMessage(data.varName2, cache);
 	const member = this.getMember(storage2, varName2, cache);
-	const funcName = Array.isArray(role) ? 'removeRoles': 'removeRole';
-	if(Array.isArray(member)) {
-		this.callListFunc(member, funcName, [role]).then(function() {
-			this.callNextAction(cache);
-		}.bind(this));
-	} else if(member && member[funcName]) {
-		member[funcName](role).then(function(member) {
+	if(member && member.removeRole) {
+		member.removeRole(role).then(function(member) {
 			this.callNextAction(cache);
 		}.bind(this)).catch(this.displayError.bind(this, data, cache));
 	} else {

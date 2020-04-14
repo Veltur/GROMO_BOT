@@ -23,8 +23,8 @@ section: "Server Control",
 //---------------------------------------------------------------------
 
 subtitle: function(data) {
-	const servers = ['Current Server', 'Temp Variable', 'Server Variable', 'Global Variable'];
-	return `${servers[parseInt(data.server)]}`;
+	const channels = ['Current Server', 'Temp Variable', 'Server Variable', 'Global Variable'];
+	return `${channels[parseInt(data.server)]}`;
 },
 
 //---------------------------------------------------------------------

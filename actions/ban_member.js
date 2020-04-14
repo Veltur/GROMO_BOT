@@ -101,11 +101,7 @@ action: function(cache) {
 	const type = parseInt(data.member);
 	const varName = this.evalMessage(data.varName, cache);
 	const member = this.getMember(type, varName, cache);
-	if(Array.isArray(member)) {
-		this.callListFunc(member, 'ban', [this.evalMessage(data.reason, cache)]).then(function() {
-			this.callNextAction(cache);
-		}.bind(this));
-	} else if(member && member.ban) {
+	if(member && member.ban) {
 		member.ban(this.evalMessage(data.reason, cache)).then(function(member) {
 			this.callNextAction(cache);
 		}.bind(this)).catch(this.displayError.bind(this, data, cache));

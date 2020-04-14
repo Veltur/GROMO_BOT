@@ -99,11 +99,7 @@ action: function(cache) {
 	const type = parseInt(data.server);
 	const varName = this.evalMessage(data.varName, cache);
 	const server = this.getServer(type, varName, cache);
-	if(Array.isArray(server)) {
-		this.callListFunc(server, 'setName', [this.evalMessage(data.serverName, cache)]).then(function() {
-			this.callNextAction(cache);
-		}.bind(this));
-	} else if(server && server.setName) {
+	if(server && server.setName) {
 		server.setName(this.evalMessage(data.serverName, cache)).then(function() {
 			this.callNextAction(cache);
 		}.bind(this)).catch(this.displayError.bind(this, data, cache));

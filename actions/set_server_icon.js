@@ -108,21 +108,15 @@ action: function(cache) {
 	const type = parseInt(data.server);
 	const varName = this.evalMessage(data.varName, cache);
 	const server = this.getServer(type, varName, cache);
-	if(Array.isArray(server) || (server && server.setIcon)) {
+	if(server && server.setIcon) {
 		const type = parseInt(data.storage);
 		const varName2 = this.evalMessage(data.varName2, cache);
 		const image = this.getVariable(type, varName2, cache);
 		const Images = this.getDBM().Images;
 		Images.createBuffer(image).then(function(buffer) {
-			if(Array.isArray(server)) {
-				this.callListFunc(server, 'setIcon', [buffer]).then(function() {
-					this.callNextAction(cache);
-				}.bind(this));
-			} else {
-				server.setIcon(buffer).then(function() {
-					this.callNextAction(cache);
-				}.bind(this)).catch(this.displayError.bind(this, data, cache));
-			}
+			server.setIcon(buffer).then(function() {
+				this.callNextAction(cache);
+			}.bind(this)).catch(this.displayError.bind(this, data, cache));
 		}.bind(this)).catch(this.displayError.bind(this, data, cache));
 	} else {
 		this.callNextAction(cache);
